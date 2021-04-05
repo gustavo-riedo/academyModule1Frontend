@@ -3,6 +3,7 @@ import Axios from 'axios';
 import tradeList from './components/tradeList';
 import './App.css';
 import placeholderImage from './placeholder.png';
+import CurrencyInput from 'react-currency-masked-input';
 const userID = '6066193c12959abda73a385c'; // PLACEHOLDER
 
 const colors = {
@@ -11,12 +12,14 @@ const colors = {
       backgroundColor: '#121212',
       primaryColor: '#7e3ff2',
       secondaryColor: '#dcdcdc',
+      navbarColor: '#363636',
    },
    lightMode: {
       activated: false,
-      backgroundColor: '#ffffff',
+      backgroundColor: '#e6e6e6',
       primaryColor: '#7e3ff2',
       secondaryColor: '#333333',
+      navbarColor: '#d6d6d6',
    },
 };
 
@@ -38,6 +41,10 @@ function switchColorMode() {
          '--backgroundColor',
          colors.lightMode.backgroundColor
       );
+      document.documentElement.style.setProperty(
+         '--navbarColor',
+         colors.lightMode.navbarColor
+      );
    } else {
       colors.darkMode.activated = true;
       colors.lightMode.activated = false;
@@ -53,6 +60,10 @@ function switchColorMode() {
       document.documentElement.style.setProperty(
          '--backgroundColor',
          colors.darkMode.backgroundColor
+      );
+      document.documentElement.style.setProperty(
+         '--navbarColor',
+         colors.darkMode.navbarColor
       );
    }
 }
@@ -195,7 +206,11 @@ class App extends Component {
                            <p>USD to GBP rate</p>
                            <label>
                               Value
-                              <input type="text" />
+                              <CurrencyInput
+                                 name="gbpInput"
+                                 defaultValue="0.00"
+                                 required
+                              />
                            </label>
                            <input
                               type="submit"
@@ -208,7 +223,11 @@ class App extends Component {
                            <p>GBP to USD rate</p>
                            <label>
                               Value
-                              <input type="text" />
+                              <CurrencyInput
+                                 name="usdInput"
+                                 defaultValue="0.00"
+                                 required
+                              />
                            </label>
                            <input
                               type="submit"
