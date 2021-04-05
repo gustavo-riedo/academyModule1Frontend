@@ -1,86 +1,322 @@
-:root {
-   font-size: calc(1px + 2vmin);
-   --navbarSize: 7vw;
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+   /* Box characteristics */
+   margin: 0;
+   padding: 0;
+
+   /* Others */
+   box-sizing: border-box;
 }
 
+/* Root default style and variables */
+:root {
+   /* Font */
+   font: normal 400 calc(1px + 2vmin) 'Roboto', sans-serif;
+   color: var(--secondaryColor);
+
+   /* Variables */
+   --navbarSize: 7vw;
+   --primaryColor: #7e3ff2;
+   --secondaryColor: #dcdcdc;
+   --backgroundColor: #121212;
+   --navbarColor: #363636;
+}
+
+/* Shadows */
 p,
 label {
+   /* Others */
    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+svg {
+   /* Others */
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .App-header {
-   background-color: #121212;
+   /* Background */
+   background-color: var(--backgroundColor);
+
+   /* Dimensions */
    min-height: 100vh;
+
+   /* Positioning */
    display: flex;
    flex-direction: row;
-   color: white;
 }
 
+/* Navbar elements */
 nav {
-   background-color: #363636;
+   /* Background */
+   background-color: var(--navbarColor);
+
+   /* Dimensions */
    height: 100vh;
    width: var(--navbarSize);
+
+   /* Positioning */
    position: fixed;
 }
 nav ul {
+   /* Dimensions */
    height: 100%;
    width: 100%;
-   list-style: none;
+
+   /* Positioning */
    display: flex;
    flex-direction: column;
+
+   /* Box characteristics */
    padding: 0;
    margin: 0;
+
+   /* Others */
+   list-style: none;
 }
 nav li {
+   /* Dimensions */
    width: 100%;
    max-height: 10vh;
+
+   /* Box characteristics */
    margin: 2vh 0;
 }
-nav li:last-child {
+nav li:nth-last-child(2) {
+   /* Box characteristics */
    margin-top: auto;
 }
 nav li:hover {
+   /* Others */
    transform: translateY(-1px);
 }
-.navbarLink {
+nav a {
+   /* Font */
+   text-decoration: none;
+
+   /* Dimensions */
    width: 100%;
    height: 100%;
 }
 nav svg {
+   /* Dimensions */
    width: 100%;
-   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 nav label {
-   text-align: center;
+   /* Font */
    font-weight: 700;
    font-size: 0.8rem;
-   color: #7e3ff2;
-   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   color: var(--primaryColor);
+
+   /* Positioning */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   /* Others */
+   cursor: pointer;
 }
+
 main {
+   /* Dimensions */
+   width: 100vw;
+
+   /* Box characteristics */
    padding-left: var(--navbarSize);
-   width: calc(100vw - var(--navbarSize));
+
+   /* Positioning */
    display: flex;
    align-items: center;
    justify-content: center;
 }
-.mainCard {
+.mainContainer {
+   /* Background */
    background-color: rgba(255, 255, 255, 0.15);
-   border-radius: 5px;
+
+   /* Dimensions */
    width: 80%;
+
+   /* Box characteristics */
+   border-radius: 5px;
 }
-.profileSection {
-   padding: 1rem;
-   display: flex;
-   border-bottom: 2px solid #121212;
-}
-.profileText {
-   margin: 0;
-   margin-top: 0.5rem;
-}
+
+/* Profile section elements */
 img {
+   /* Dimensions */
    width: 7rem;
    height: 7rem;
+
+   /* Box characteristics */
    border-radius: 100%;
    margin-right: 1rem;
+}
+.profileSection {
+   /* Box characteristics */
+   padding: 1.5rem;
+   border-bottom: 2px solid #121212;
+
+   /* Positioning */
+   display: flex;
+}
+.accountData label,
+.accountBalance label {
+   /* Font */
+   font-weight: 700;
+   color: var(--primaryColor);
+}
+.accountData p,
+.accountBalance p {
+   /* Font */
+   font-weight: 400;
+   color: var(--secondaryColor);
+
+   /* Box characteristics */
+   margin: 0;
+}
+.accountBalance p {
+   /* Positioning */
+   text-align: right;
+}
+.accountBalance {
+   /* Box characteristics */
+   margin-left: auto;
+}
+
+/* Trade section elements */
+.tradeSection {
+   /* Box characteristics */
+   padding: 1.5rem;
+   border-bottom: 2px solid #121212;
+
+   /* Positioning */
+   display: flex;
+}
+form {
+   /* Box characteristics */
+   margin: auto;
+
+   /* Positioning */
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+form label {
+   /* Font */
+   font-weight: 500;
+   color: var(--primaryColor);
+
+   /* Positioning */
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+}
+form input {
+   /* Font */
+   font-size: 1rem;
+
+   /* Dimensions */
+   height: 4vh;
+
+   /* Box characteristics */
+   border: none;
+   border-radius: 5px;
+
+   /* Others */
+   outline: none;
+}
+form input[type='text'] {
+   /* Background */
+   background-color: rgba(255, 255, 255, 0.15);
+
+   /* Font */
+   color: var(--secondaryColor);
+
+   /* Dimensions */
+   width: 15vw;
+
+   /* Box characteristics */
+   padding: 0.5rem;
+   margin-top: 0.3rem;
+   margin-bottom: 1rem;
+}
+form input[type='submit'] {
+   /* Background */
+   background-color: var(--primaryColor);
+
+   /* Font */
+   font-weight: 600;
+
+   /* Dimensions */
+   width: 6vw;
+
+   /* Others */
+   cursor: pointer;
+}
+form p {
+   /* Font */
+   font-weight: 500;
+
+   /* Box characteristics */
+   margin: 0.5rem 0;
+}
+.tradeRate {
+   /* Font */
+   font-size: 3rem;
+   color: var(--primaryColor);
+}
+
+/* History section elements */
+.historySection {
+   /* Box characteristics */
+   padding: 1.5rem;
+}
+.historyList {
+   /* Box characteristics */
+   padding: 0;
+
+   /* Others */
+   list-style: none;
+}
+.historyItem {
+   /* Background */
+   background-color: rgba(255, 255, 255, 0.15);
+
+   /* Box characteristics */
+   margin: 0.5rem 0;
+   padding: 0.5rem 1rem;
+   border-radius: 5px;
+
+   /* Positioning */
+   display: flex;
+}
+.historyItem * {
+   /* Box characteristics */
+   margin-left: 0.5rem;
+}
+.historyItem input[type='button'] {
+   /* Background */
+   background-color: var(--primaryColor);
+
+   /* Font */
+   font-weight: 700;
+
+   /* Dimensions */
+   width: 5vw;
+
+   /* Box characteristics */
+   border: 0;
+   border-radius: 5px;
+
+   /* Others */
+   outline: none;
+   cursor: pointer;
+}
+.historyItemType {
+   /* Font */
+   font-weight: 600;
+   color: var(--secondaryColor);
+}
+.historyItemDeposit {
+   margin-left: auto;
 }
