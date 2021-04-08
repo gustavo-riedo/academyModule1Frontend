@@ -5,9 +5,8 @@ function tradeItem(trade, index) {
       <>
          <li key={index} className="historyItem">
             <p className="historyItemType">{trade.type}</p>
-            <p className="historyItemDate">{trade.date}</p>
-            <p className="historyItemDeposit">{trade.deposit}</p>
-            <input type="button" value="Retrade" />
+            <p className="historyItemDate">{trade.createdAt}</p>
+            <p className="historyItemDeposit">Value: {trade.income}</p>
          </li>
       </>
    );
