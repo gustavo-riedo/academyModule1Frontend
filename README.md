@@ -13,7 +13,7 @@ This is the front-end of the Westpoint academy Module 1 project.
 
 ## Navbar
 
-The navbar is very minimalist and has only the Dashboard and trading history as main pages, in the bottom it displays the exit option and a theme switch button (dark/light themes)
+The navbar is very minimalist and has only the Dashboard page, in the bottom it displays the exit option and a theme switch button (dark/light themes)
 
 ## Dashboard
 
